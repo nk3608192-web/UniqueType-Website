@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | NK GAMING YT</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding-top: 80px;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            background: linear-gradient(-45deg, #000428, #004e92, #000000, #001f3f);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.85);
+            padding: 15px;
+            border-bottom: 2px solid cyan;
+            z-index: 999;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            text-shadow: 0 0 5px cyan;
+        }
+
+        .navbar a:hover {
+            color: cyan;
+            text-shadow: 0 0 15px cyan;
+        }
+
+        h1 {
+            color: red;
+            text-shadow: 0 0 15px red;
+            margin-bottom: 20px;
+        }
+
+        .contact-box {
+            max-width: 400px;
+            margin: auto;
+            background: rgba(0,0,0,0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px cyan;
+            position: relative;
+            z-index: 1;
+        }
+
+        .discord {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: aqua;
+            text-shadow: 0 0 10px aqua;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            background: transparent;
+            border: 2px solid cyan;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            box-shadow: 0 0 10px cyan;
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        button {
+            width: 95%;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 18px;
+            background: transparent;
+            color: white;
+            border: 2px solid cyan;
+            cursor: pointer;
+            text-shadow: 0 0 5px cyan;
+            box-shadow: 0 0 15px cyan;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: cyan;
+            color: black;
+            box-shadow: 0 0 30px cyan;
+        }
+
+        .insta-btn {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 25px;
+            margin-top: 15px;
+            cursor: pointer;
+            box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .insta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px #ff00ff, 0 0 60px #ff00ff, 0 0 90px #ff00ff;
+        }
+
+        .yt-btn {
+            background: linear-gradient(45deg, #FF0000, #CC0000);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 25px;
+            margin-top: 15px;
+            cursor: pointer;
+            box-shadow: 0 0 20px #FF4444, 0 0 40px #FF4444, 0 0 60px #FF4444;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .yt-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px #FF5555, 0 0 60px #FF5555, 0 0 90px #FF5555;
+        }
+
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: floatStars 1.5s linear forwards;
+        }
+
+        @keyframes floatStars {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            50% { transform: translateY(-100px) scale(1.5); opacity: 1; }
+            100% { transform: translateY(-200px) scale(0.5); opacity: 0; }
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: floatUp 6s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-200px) scale(1.2); opacity: 1; }
+            100% { transform: translateY(-400px) scale(0.8); opacity: 0; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="index.html">HOME</a> |
+        <a href="about.html">ABOUT</a> |
+        <a href="contact.html">CONTACT</a> |
+        <a href="response.html">RESPONSES</a> |
+        <a href="more.html">MORE</a>
+    </div>
+
+    <h1>Contact Us</h1>
+
+    <div class="contact-box">
+        <div class="discord">
+            💬 Discord ID: <b>ustaad241</b>
+        </div>
+
+        <input type="email" placeholder="Your Email" required>
+        <input type="password" placeholder="Your Password" required>
+
+        <button id="signupBtn">SIGN UP HOMIE</button>
+
+        <button class="insta-btn" id="instaBtn">📸 Follow Us</button>
+
+        <button class="yt-btn" id="ytBtn">▶️ Subscribe</button>
+    </div>
+
+    <div id="bubbles"></div>
+
+    <script>
+        const signupBtn = document.getElementById('signupBtn');
+        const bubblesContainer = document.getElementById('bubbles');
+        const instaBtn = document.getElementById('instaBtn');
+        const ytBtn = document.getElementById('ytBtn');
+
+        signupBtn.addEventListener('click', () => {
+            for (let i = 0; i < 20; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                bubble.style.width = `${Math.random() * 40 + 20}px`;
+                bubble.style.height = bubble.style.width;
+                bubble.style.left = `${Math.random() * window.innerWidth}px`;
+                bubble.style.animationDuration = `${Math.random() * 3 + 3}s`;
+                bubblesContainer.appendChild(bubble);
+                bubble.addEventListener('animationend', () => bubble.remove());
+            }
+            setTimeout(() => {
+                window.location.href = "https://discord.gg/ACeNuTPN";
+            }, 500);
+        });
+
+        instaBtn.addEventListener('click', () => {
+            const rect = instaBtn.getBoundingClientRect();
+            for (let i = 0; i < 15; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = `${Math.random() * rect.width}px`;
+                star.style.bottom = `0px`;
+                star.style.width = `${Math.random() * 6 + 4}px`;
+                star.style.height = star.style.width;
+                star.style.background = `hsl(${Math.random()*360}, 100%, 80%)`;
+                star.style.animationDuration = `${Math.random() * 1 + 1}s`;
+                instaBtn.appendChild(star);
+                star.addEventListener('animationend', () => star.remove());
+            }
+            setTimeout(() => {
+                window.open("https://www.instagram.com/itx._bullet/", "_blank");
+            }, 300);
+        });
+
+        ytBtn.addEventListener('click', () => {
+            const rect = ytBtn.getBoundingClientRect();
+            for (let i = 0; i < 15; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = `${Math.random() * rect.width}px`;
+                star.style.bottom = `0px`;
+                star.style.width = `${Math.random() * 6 + 4}px`;
+                star.style.height = star.style.width;
+                star.style.background = `hsl(${Math.random()*360}, 100%, 80%)`;
+                star.style.animationDuration = `${Math.random() * 1 + 1}s`;
+                ytBtn.appendChild(star);
+                star.addEventListener('animationend', () => star.remove());
+            }
+            setTimeout(() => {
+                window.open("https://www.youtube.com/@UniqeType", "_blank");
+            }, 300);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NK GAMING YT</title>
+
+
+<style>
+
+body {
+    margin: 0;
+    padding-top: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+
+    background: linear-gradient(-45deg, #000428, #00052e, #000000, #0058cc);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    padding: 15px;
+    border-bottom: 2px solid cyan;
+    z-index: 999;
+    transition: top 0.4s ease;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+    text-shadow: 0 0 5px cyan;
+}
+
+.navbar a:hover {
+    color: cyan;
+    text-shadow: 0 0 15px cyan;
+}
+
+.logo {
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 15px;
+    filter: drop-shadow(0 0 10px red);
+}
+
+
+.home-hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background: url("homepage.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.home-hero h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 80px;
+    text-shadow: 0 0 15px cyan, 0 0 30px blue;
+}
+
+
+h2 {
+    font-size: 35px;
+    text-shadow: 0 0 10px red;
+}
+
+p {
+    font-size: 22px;
+    color: cyan;
+    text-shadow: 0 0 8px #00f;
+}
+
+button {
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: 2px solid cyan;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    text-shadow: 0 0 5px cyan;
+    box-shadow: 0 0 10px cyan;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: cyan;
+    color: black;
+    box-shadow: 0 0 25px cyan;
+}
+
+
+.ad-box {
+    width: 90%;
+    max-width: 970px;
+    height: 90px;
+    margin: 30px auto;
+    border: 2px dashed cyan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: cyan;
+    font-size: 18px;
+    text-shadow: 0 0 10px cyan;
+}
+
+
+iframe {
+    border: none;
+    width: 300px;
+    height: 533px;
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="navbar">
+    <img src="logo.png" class="logo">
+    <a href="index.html">HOME</a> |
+    <a href="about.html">ABOUT</a> |
+    <a href="contact.html">CONTACT</a> |
+    <a href="response.html">RESPONSES</a> |
+    <a href="more.html">MORE</a>
+</div>
+
+
+<div class="ad-box">
+    Google AdSense (970x90)
+</div>
+
+
+<div class="home-hero">
+    <h1>UniqueType</h1>
+</div>
+
+<h2>Nabeel Khan</h2>
+<p>This site is made by Ustaad.</p>
+
+<button onclick="window.open('https://www.youtube.com/watch?v=z9NTGkECHGg&t=7043s')">LIKE VIDEO</button>
+<button onclick="window.open('https://www.youtube.com/@UniqeType')">SUBSCRIBE</button>
+<button onclick="window.open('https://discord.gg/ACeNuTPN')">DISCORD</button>
+
+
+<div class="ad-box">
+    Google AdSense (300x250)
+</div>
+
+
+<iframe src="https://www.youtube.com/embed/dkzrkMtzh6k?mute=1" allowfullscreen></iframe>
+
+
+<script>
+
+window.onload = () => document.body.classList.add("loaded");
+
+
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    navbar.style.top = scrollTop > lastScrollTop ? '-100px' : '0';
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
+
+
+document.querySelectorAll('a').forEach(link => {
+    if (link.href.includes(location.origin)) {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            document.body.style.opacity = 0;
+            setTimeout(() => window.location = link.href, 300);
+        });
+    }
+});
+</script>
+
+</body>
+</html>
